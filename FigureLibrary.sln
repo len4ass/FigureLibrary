@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FigureLibrary", "FigureLibrary\FigureLibrary.csproj", "{9E4D9F86-F74D-41D3-BD91-D4E5199C7F0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FigureLibrary.Tests", "FigureLibrary.Tests\FigureLibrary.Tests.csproj", "{B7FDD2E2-2C4A-4FA5-8B36-481F0F5F31B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FigureDemo", "FigureDemo\FigureDemo.csproj", "{63B1B0F6-65A0-4EC4-A5AE-2F15E0BE2590}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E4D9F86-F74D-41D3-BD91-D4E5199C7F0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E4D9F86-F74D-41D3-BD91-D4E5199C7F0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E4D9F86-F74D-41D3-BD91-D4E5199C7F0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E4D9F86-F74D-41D3-BD91-D4E5199C7F0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7FDD2E2-2C4A-4FA5-8B36-481F0F5F31B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7FDD2E2-2C4A-4FA5-8B36-481F0F5F31B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7FDD2E2-2C4A-4FA5-8B36-481F0F5F31B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7FDD2E2-2C4A-4FA5-8B36-481F0F5F31B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63B1B0F6-65A0-4EC4-A5AE-2F15E0BE2590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63B1B0F6-65A0-4EC4-A5AE-2F15E0BE2590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63B1B0F6-65A0-4EC4-A5AE-2F15E0BE2590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63B1B0F6-65A0-4EC4-A5AE-2F15E0BE2590}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
