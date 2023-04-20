@@ -4,14 +4,14 @@ namespace FigureLibrary.Figures;
 
 public class Triangle : Figure
 {
-    public decimal FirstSide { get; }
-    public decimal SecondSide { get; }
-    public decimal ThirdSide { get; }
+    public double FirstSide { get; }
+    public double SecondSide { get; }
+    public double ThirdSide { get; }
 
     public Triangle(
-        decimal firstSide,
-        decimal secondSide,
-        decimal thirdSide)
+        double firstSide,
+        double secondSide,
+        double thirdSide)
     {
         if (firstSide <= 0 || secondSide <= 0 || thirdSide <= 0)
         {
@@ -30,35 +30,30 @@ public class Triangle : Figure
         ThirdSide = thirdSide;
     }
 
-    public decimal GetPerimeter()
+    public bool IsRightTriangle()
+    {
+        double trianglePerimeter = GetPerimeter();
+        double smallestSide = Math.Min(FirstSide, Math.Min(SecondSide, ThirdSide));
+        double biggestSide = Math.Max(FirstSide, Math.Max(SecondSide, ThirdSide));
+        double middleSide = trianglePerimeter - smallestSide - biggestSide;
+
+        double sumOfSquaresOfSmallerSides = smallestSide * smallestSide + middleSide * middleSide;
+        double squareOfBiggestSide = biggestSide * biggestSide;
+        return Math.Abs(sumOfSquaresOfSmallerSides - squareOfBiggestSide) < 1e-9;
+    } 
+
+    public override double GetPerimeter()
     {
         return FirstSide + SecondSide + ThirdSide;
     }
-     
-    public bool IsRightTriangle()
+    
+    public override double GetArea()
     {
-        decimal trianglePerimeter = FirstSide + SecondSide + ThirdSide;
-        decimal smallestSide = Math.Min(FirstSide, Math.Min(SecondSide, ThirdSide));
-        decimal biggestSide = Math.Max(FirstSide, Math.Max(SecondSide, ThirdSide));
-        decimal middleSide = trianglePerimeter - smallestSide - biggestSide;
-
-        decimal sumOfSquaresOfSmallerSides = smallestSide * smallestSide + middleSide * middleSide;
-        decimal squareOfBiggestSide = biggestSide * biggestSide;
-        if (sumOfSquaresOfSmallerSides == squareOfBiggestSide)
-        {
-            return true;
-        }
-
-        return false;
-    } 
-
-    public override double GetFigureArea()
-    {
-        decimal halfPerimeter = GetPerimeter() / 2;
-        decimal areaSquared = halfPerimeter *
+        double halfPerimeter = GetPerimeter() / 2;
+        double areaSquared = halfPerimeter *
                        (halfPerimeter - FirstSide) *
                        (halfPerimeter - SecondSide) *
                        (halfPerimeter - ThirdSide);
-        return Math.Sqrt((double)areaSquared);
+        return Math.Sqrt(areaSquared);
     }
 }

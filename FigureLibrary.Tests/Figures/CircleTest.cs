@@ -24,17 +24,28 @@ public class CircleTest
         var radius = 2;
         var circle = new Circle(radius);
         
-        Assert.Equal(radius, circle.Radius);
+        Assert.Equal(radius, circle.Radius, 9);
     }
 
     [Fact]
-    public void GetArea_ReturnsCorrectArea_ForCircleWithGivenRadius()
+    public void GetPerimeter_ReturnsCorrectPerimeter_ForCircleWithGivenRadius()
     {
-        var radius = 1;
+        var radius = 2;
         var circle = new Circle(radius);
 
-        var expected = Math.PI;
-        var actual = circle.GetFigureArea();
-        Assert.Equal(expected, actual);
+        var expectedPerimeter = 2 * Math.PI * radius;
+        var actualPerimeter = circle.GetPerimeter();
+        Assert.Equal(expectedPerimeter, actualPerimeter, 9);
+    }
+    
+    [Fact]
+    public void GetArea_ReturnsCorrectArea_ForCircleWithGivenRadius()
+    {
+        var radius = 2;
+        var circle = new Circle(radius);
+
+        var expectedArea = Math.PI * radius * radius;
+        var actualArea = circle.GetArea();
+        Assert.Equal(expectedArea, actualArea, 9);
     }
 }

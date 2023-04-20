@@ -28,9 +28,9 @@ public class TriangleTest
     [Fact]
     public void Constructor_DoesNotThrow_OnSidesThatFormValidTriangle()
     {
-        decimal firstSide = 7;
-        decimal secondSide = 10;
-        decimal thirdSide = 7;
+        double firstSide = 7;
+        double secondSide = 10;
+        double thirdSide = 7;
 
         var triangle = new Triangle(
             firstSide,
@@ -41,43 +41,43 @@ public class TriangleTest
     [Fact]
     public void SideGetters_ReturnValues_PassedIntoConstructor()
     {
-        decimal firstSide = 7;
-        decimal secondSide = 10;
-        decimal thirdSide = 7;
+        double firstSide = 7;
+        double secondSide = 10;
+        double thirdSide = 7;
 
         var triangle = new Triangle(
             firstSide,
             secondSide,
             thirdSide);
         
-        Assert.Equal(firstSide, triangle.FirstSide);
-        Assert.Equal(secondSide, triangle.SecondSide);
-        Assert.Equal(thirdSide, triangle.ThirdSide);
+        Assert.Equal(firstSide, triangle.FirstSide, 9);
+        Assert.Equal(secondSide, triangle.SecondSide, 9);
+        Assert.Equal(thirdSide, triangle.ThirdSide, 9);
     }
 
     [Fact]
     public void GetPerimeter_ReturnsCorrectPerimeter_ForValidTriangle()
     {
-        decimal firstSide = 5;
-        decimal secondSide = 5;
-        decimal thirdSide = 8;
+        double firstSide = 5;
+        double secondSide = 5;
+        double thirdSide = 8;
 
         var triangle = new Triangle(
             firstSide,
             secondSide,
             thirdSide);
 
-        decimal expectedPerimeter = firstSide + secondSide + thirdSide;
-        decimal actualPerimeter = triangle.GetPerimeter();
-        Assert.Equal(expectedPerimeter, actualPerimeter);
+        var expectedPerimeter = firstSide + secondSide + thirdSide;
+        var actualPerimeter = triangle.GetPerimeter();
+        Assert.Equal(expectedPerimeter, actualPerimeter, 9);
     }
 
     [Fact]
     public void GetArea_ReturnsCorrectArea_ForValidTriangle()
     {
-        decimal firstSide = 5;
-        decimal secondSide = 5;
-        decimal thirdSide = 8;
+        double firstSide = 5;
+        double secondSide = 5;
+        double thirdSide = 8;
         
         var triangle = new Triangle(
             firstSide, 
@@ -85,16 +85,16 @@ public class TriangleTest
             thirdSide);
 
         double expectedArea = 12;
-        double actualArea = triangle.GetFigureArea();
-        Assert.Equal(expectedArea, actualArea);
+        double actualArea = triangle.GetArea();
+        Assert.Equal(expectedArea, actualArea, 9);
     }
 
     [Fact]
     public void IsRightTriangle_ReturnsTrue_ForValidRightTriangle()
     {
-        decimal firstSide = 3;
-        decimal secondSide = 4;
-        decimal thirdSide = 5;
+        double firstSide = 3;
+        double secondSide = 4;
+        double thirdSide = 5;
 
         var triangle = new Triangle(
             firstSide,
@@ -108,9 +108,9 @@ public class TriangleTest
     [Fact]
     public void IsRightTriangle_ReturnsFalse_ForValidNonRightTriangle()
     {
-        decimal firstSide = 7;
-        decimal secondSide = 10;
-        decimal thirdSide = 7;
+        double firstSide = 7;
+        double secondSide = 10;
+        double thirdSide = 7;
 
         var triangle = new Triangle(
             firstSide,

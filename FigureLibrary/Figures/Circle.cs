@@ -4,9 +4,9 @@ namespace FigureLibrary.Figures;
 
 public class Circle : Figure
 {
-    public decimal Radius { get; }
+    public double Radius { get; }
 
-    public Circle(decimal radius)
+    public Circle(double radius)
     {
         if (radius <= 0)
         {
@@ -15,10 +15,14 @@ public class Circle : Figure
         
         Radius = radius;
     }
-    
-    public override double GetFigureArea()
+
+    public override double GetPerimeter()
     {
-        double radius = (double) Radius;
-        return Math.PI * radius * radius;
+        return 2 * Math.PI * Radius;
+    }
+
+    public override double GetArea()
+    {
+        return Math.PI * Radius * Radius;
     }
 }
