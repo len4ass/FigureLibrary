@@ -1,0 +1,51 @@
+-- Создадим таблицу с продуктами
+CREATE TABLE Products
+(
+    Id INT IDENTITY(1, 1) PRIMARY KEY,
+    Name VARCHAR(255),
+)
+
+-- Создадим таблицу с категориями продуктов
+CREATE TABLE ProductCategories
+(
+    Id INT IDENTITY(1, 1) PRIMARY KEY,
+    Name VARCHAR(255),
+)
+
+-- Создадим таблицу, которая будет хранить пары "ссылки": Id продукта в таблице Products и Id категории продукта в таблице ProductCategories
+CREATE TABLE CategorizedProducts
+(
+    Id INT IDENTITY(1, 1) PRIMARY KEY,
+    ProductId INT REFERENCES Products(Id),
+    ProductCategoryId INT REFERENCES ProductCategories(Id)
+)
+
+-- Заполним таблицу Products названиями продуктов
+INSERT INTO Products(Name) VALUES ('Twix'), ('Coca-Cola'), ('Pringles'), ('Tomato'), ('Cucumber'), ('Chicken'), ('Carp')
+
+-- Заполним таблицу ProductCategories названиями категорий продуктов
+INSERT INTO ProductCategories(Name) VALUES ('Vegetable'), ('Meat'), ('Beverage'), ('Snack'), ('Chocolate Bar')
+
+-- Заполним таблицу CategorizedProducts парами (ProductId, ProductCategoryId), 
+-- основываясь на изначальном порядке добавления элементов в прошлые две таблицы
+INSERT INTO CategorizedProducts(ProductId, ProductCategoryId) VALUES (1, 4), (1, 5), (2, 3), (3, 4), (4, 1), (5, 1), (6, 2)
+
+-- Берем все продукты и сочетаем их с их категориями
+-- Один и тот же продукт может состоять в нескольких категориях
+-- Одна категория может содержать разное количество продуктов
+-- Если продукт есть в таблице Product, но при этом ему не назначена категория (его нет в CategorizedProducts), 
+-- то его категория будет выведена как null
+SELECT Products.Name AS 'ProductName', ProductCategories.Name AS 'CategoryName' FROM Products
+LEFT JOIN CategorizedProducts ON CategorizedProducts.ProductId = Products.Id
+LEFT JOIN ProductCategories ON ProductCategories.Id = CategorizedProducts.ProductCategoryId
+
+-- Ожидаемый вывод
+-- Twix,Snack
+-- Twix,Chocolate Bar
+-- Coca-Cola,Beverage
+-- Pringles,Snack
+-- Tomato,Vegetable
+-- Cucumber,Vegetable
+-- Chicken,Meat
+-- Carp,<null>
+
