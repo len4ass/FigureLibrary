@@ -1,5 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=06057c55_002D04a0_002D4416_002D997f_002Dc5e136825cf7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CircleTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=14fab061_002Dec6f_002D484b_002D83c5_002D6efbfbd5cf7e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CircleTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::B7FDD2E2-2C4A-4FA5-8B36-481F0F5F31B4::net6.0::FigureLibrary.Tests.Figures.CircleTest&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::B7FDD2E2-2C4A-4FA5-8B36-481F0F5F31B4::net6.0::FigureLibrary.Tests.Figures.TriangleTest&lt;/TestId&gt;
